@@ -66,7 +66,11 @@ def detect_gap(df):
     # ACCESS THE 1ST AND 3RD CANDLE FROM THE SESSION
     # ------------------------------
     first_candle = df.iloc[0]
+    print(f"The first candle high is: {first_candle['high']}")
     third_candle = df.iloc[2]
+    print(f"The first candle high is: {third_candle["low"]}")
+
+
 
     # ------------------------------
     # 1ST SCENARIO - BULLISH (UPSIDE) GAP FORMED
@@ -93,15 +97,11 @@ def detect_gap(df):
     else:
         return False
 
-detect_gap(df)
+detect_gap(session_timeselect)
 
-# ------------------------------
-# FUNCTION TO BE LOOKING FOR THE GAP IN WHOLE INTERVAL FROM 10 AM EST TO 10:55 EST
-# ------------------------------
+# -------------------------------------------------------- TRADE EXECUTION ----------------------------------------------------------
 
-
-
-# OTEVŘENÍ POZICE - POKUD BUY - OTEVŘENÍ NA HIGH PŘEDCHOZÍ SVÍČKY PO UZAVŘENÍ DALŠÍ SVÍČKY
+# ENTER POZICE - POKUD BUY - OTEVŘENÍ NA HIGH PŘEDCHOZÍ SVÍČKY PO UZAVŘENÍ DALŠÍ SVÍČKY
                     # POKUD SELL - OTEVŘENÍ NA LOW PŘEDCHOZÍ SVÍČKY PO UZAVŘENÍ DALŠÍ SVÍČKY
         
         # STOP LOSS - POKUD BUY - STOP LOSS O 1 PIP POD LOW PŘEDCHOZÍ NEBO DALŠÍ SVÍČKY (ZKONTROLOVAT OBOJÍ)  
