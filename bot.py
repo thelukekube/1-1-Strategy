@@ -41,9 +41,7 @@ session_timeselect = df.between_time("10:00", "10:55")
 print(type(session_timeselect))
 print(session_timeselect)
 
-# FIND GAPS BETWEEN HIGH AND LOW OF 1 AND 3 CANDLE, POKUD JE > 0 VRÁTÍ TRUE
-
-# OMEZIT ČAS NA LOOP NA 10 AM EST - 11 AM EST
+# LOOP FIND GAPS BETWEEN HIGH AND LOW OF 1 AND 3 CANDLE, POKUD JE > 0 VRÁTÍ TRUE
 
 # POKUD CENA PO VYTVOŘENÍ TÉTO MEZERY DOSÁHNE HIGH CENY OR LOW CENY TÉTO MEZERY = TRUE
     
