@@ -33,12 +33,16 @@ def session_gap_detect(df):
             print(f"Checking formation starting at candle {i+1} (times: {first_time} to {third_time})")
             print(f"First candle: High={first_candle['high']:.2f}, Low={first_candle['low']:.2f}")
             print(f"Third candle: High={third_candle['high']:.2f}, Low={third_candle['low']:.2f}")
+
             # ------------------------------
-            # BULLISH GAP (UPSIDE)
+            # GAPS VARIABLES
             # ------------------------------
             bullish_gap = third_candle["low"] > first_candle["high"]
             bearish_gap = third_candle["high"] < first_candle["low"]
-
+            
+            # ------------------------------
+            # BULLISH GAP (UPSIDE)
+            # ------------------------------
             if bullish_gap:
                 gap_size = third_candle["low"] - first_candle["high"]
                 print(f"Bullish gap detected with size {gap_size:.2f} at {first_time} to {third_time}.")
