@@ -75,3 +75,4 @@ if session_timeselect.empty:
 # ------------------------------
 candles_in_range = session_timeselect.groupby(session_timeselect.index.date).size()
 print(f"\nTotal number of candles across all days: {len(session_timeselect)}")
+
