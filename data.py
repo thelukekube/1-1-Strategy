@@ -74,5 +74,5 @@ if session_timeselect.empty:
 # COUNT 5-MINUTE CANDLES PER DAY
 # ------------------------------
 candles_in_range = session_timeselect.groupby(session_timeselect.index.date).size()
-print(f"\nTotal number of candles across all days: {len(session_timeselect)}")
+# print(f"\nTotal number of candles across all days: {len(session_timeselect)}")
 
