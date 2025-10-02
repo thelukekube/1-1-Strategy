@@ -76,30 +76,22 @@ def session_gap_detect(df):
 # ----------------------------------------------------------------------------------------------------------
 detected_gaps = session_gap_detect(data.session_timeselect)
 
-def gap_formed_confirmation():
-    detected_gaps = session_gap_detect(data.session_timeselect)
-    # ----------------------------------------
-    # CONVERT CREATED GAPS TO PANDAS DATAFRAME
-    # ----------------------------------------
-    dataframe_detected_gaps = pd.DataFrame(detected_gaps)
-    dataframe_detected_gaps.columns = ["date", "gap type", "gap size", "gap low", "gap high", "first candle time", "third candle time"]
-    print(dataframe_detected_gaps)
-
-    # --------------------------------------------------------------------------------
-    # FILTERING THE GAPS BY THE TYPE TO CREATE FUNCTION FOR CONFIRMATION FOR EACH TYPE
-    # --------------------------------------------------------------------------------
-    gap_type = dataframe_detected_gaps["gap type"]
-    gap_high = dataframe_detected_gaps["gap high"]
-    gap_low = dataframe_detected_gaps["gap low"]
-
-    # NOW NEED TO LOCALIZE WHERE THE GAP WAS CREATED
-    
-
-    # 
+# ----------------------------------------
+# CONVERT CREATED GAPS TO PANDAS DATAFRAME
+# ----------------------------------------
+dataframe_detected_gaps = pd.DataFrame(detected_gaps)
+dataframe_detected_gaps.columns = ["date", "gap type", "gap size", "gap low", "gap high", "first candle time", "third candle time"]
 
 
-   
+# --------------------------------------------------------------------------------
+# FILTERING THE GAPS BY THE TYPE TO CREATE FUNCTION FOR CONFIRMATION FOR EACH TYPE
+# --------------------------------------------------------------------------------
+gap_type = dataframe_detected_gaps["gap type"]
+dataframe_gap_type = pd.DataFrame(gap_type)
+gap_high = dataframe_detected_gaps["gap high"]
+gap_low = dataframe_detected_gaps["gap low"]
 
 
-
-gap_formed_confirmation()
+def bullish_gap_confirm():
+    if dataframe_gap_type["gap type", "bullish"]:
+        print(dataframe_gap_type)
